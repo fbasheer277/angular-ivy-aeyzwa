@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { navItems } from 'src/app/app-routing';
+import { navItems } from '../../app-routing';
 
 @Component({
   selector: 'app-farm-tab',
