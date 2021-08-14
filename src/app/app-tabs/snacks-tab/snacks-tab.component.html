@@ -1,0 +1,49 @@
+<div class="page-content" fxLayout="column" fxLayoutAlign="start center">
+    <div
+      class="heading-area"
+      fxFlex="25"
+      fxLayout="column"
+      fxLayoutAlign="center start"
+    >
+      <h3></h3>
+      <h1 class="main-heading">Snacks</h1>
+      <h4>
+         Yeah it's little weird for a farming store, but we do sell snacks. Visit our snackbar if you're hungry! 😄
+      </h4>
+    </div>
+    <div
+      class="snacks-area"
+      fxFlex="68"
+      fxLayout="column"
+      fxLayoutAlign="start stretch"
+    >
+      <form [formGroup]="snackFiltersForm" fxLayout="row" (ngSubmit)="filterSnacks()">
+        <div fxFlex="50" class="neu-box-in theme-button searchbar" fxLayout="row" fxLayoutAlign="start center"> 
+            <input matInput placeholder="Search Snacks" [formControlName]="'searchText'" (blur)="handleBlur()">
+            <mat-icon *ngIf="snackFiltersForm.get('searchText').value"
+            (click)="clearSearch()"
+            >close</mat-icon>
+            <button mat-icon-button>
+                <mat-icon>search</mat-icon>
+            </button>
+        </div>
+      </form>
+      <div class="neu-box-in tab-content" fxFlex="90">
+        <div *ngIf="filteredSnacks.length > 0; else noSnacks" fxLayout="row wrap" fxLayoutAlign="center start" fxLayoutWrap fxLayoutGap="20px" class="grid-list">
+            <div class="grid-card" *ngFor="let snack of filteredSnacks" fxLayout="column" fxLayoutAlign="center center">
+                <div [style.background-image]="doUrl(snack.image)" class="thumbnail"></div>
+                <div class="label">
+                    {{snack.label}}
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #noSnacks>
+      <div class="list-empty-container" fxLayout="column" fxLayoutAlign="center center">
+        <h2>Oops Snacks found for '<b>{{snackFiltersForm.get('searchText').value}}</b>'</h2>
+        <img src="../../../assets/images/woolly-fisherman-1.png">
+      </div>
+  </ng-template>
+  

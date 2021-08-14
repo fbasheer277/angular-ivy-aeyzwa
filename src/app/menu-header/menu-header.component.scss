@@ -1,0 +1,77 @@
+@import '../variables.scss';
+
+.logo {
+    color: $accent;
+    mat-icon {
+        font-size: 40px;
+        height: 40px;
+        width: 40px;
+
+    }
+}
+
+.nav-link {
+    height: 40px;
+    font-weight: 400;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    cursor:pointer;
+    background-color: $theme-bg;
+    margin-right: 22px;
+    border-radius:10px;
+    box-shadow: -7px -7px 20px 0px #fff9,
+                -4px -4px 5px 0px #fff9,
+                7px 7px 20px 0px #0002,
+                4px 4px 5px 0px #0001,
+                inset 0px 0px 0px 0px #fff9,
+                inset 0px 0px 0px 0px #0001,
+                inset 0px 0px 0px 0px #fff9,
+                inset 0px 0px 0px 0px #0001;
+    transition:box-shadow 0.6s cubic-bezier(.79,.21,.06,.81);
+    &.active {
+        // color: $accent-dark;
+        font-weight: bold;
+        box-shadow: 0px 0px 0px 0px #fff9,
+              0px 0px 0px 0px #fff9,
+              0px 0px 0px 0px #0001,
+              0px 0px 0px 0px #0001,
+              inset -7px -7px 20px 0px #fff9,
+              inset -4px -4px 5px 0px #fff9,
+              inset 7px 7px 20px 0px #0003,
+              inset 4px 4px 5px 0px #0001;
+    }
+}
+
+mat-toolbar {
+    background-color: $theme-bg;
+}
+.menu-spacer {
+    width: 20px;
+}
+
+.header-spacer {
+    flex: 1 1 auto;
+  }
+.burger {
+    display: none;
+}
+
+/* Media Query for resolution  < Tablets */
+@media screen and (max-width: 700px) {
+    .desktop-nav {
+      visibility: hidden;
+      clear: both;
+      float: left;
+      display: none !important;
+    }
+    .header-spacer {
+        flex: 1 1 auto;
+    }
+    .burger {
+        display: block;
+    }
+  }

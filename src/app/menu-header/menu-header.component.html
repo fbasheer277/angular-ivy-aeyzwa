@@ -1,0 +1,24 @@
+<mat-toolbar>
+      <h1 class="logo" fxLayout="row" fxLayoutAlign="center center"><mat-icon>yard</mat-icon><span>Oliver's Farm & Snacks</span></h1>
+      <span class="menu-spacer"></span>
+      <mat-nav-list>
+        <div fxLayout="row" fxLayoutAlign="start stretch" class="desktop-nav">
+            <!-- <a mat-flat-button class="theme-button" *ngFor="let item of navItems"
+            [routerLink]="[item.url]" [routerLinkActive]="['active']" (click)="onItemSelected($event)">
+            {{item.name}}
+            <span fxFlex *ngIf="item.children && item.children.length>0">
+              <mat-icon [@indicatorRotate]="expanded ? 'expanded': 'collapsed'">
+                expand_more
+              </mat-icon>
+            </span></a> -->
+            <app-menu-nav-item *ngFor="let item of navItems"
+            [item]="item" [floating]="true"></app-menu-nav-item>
+          </div>
+      </mat-nav-list>
+      
+      <div class="header-spacer"></div>
+      <button mat-icon-button class="burger">
+        <mat-icon (click)="toggleSideNav.emit()">menu</mat-icon>
+      </button>
+      
+  </mat-toolbar>

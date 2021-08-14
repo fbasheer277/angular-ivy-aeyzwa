@@ -1,0 +1,36 @@
+@import './variables.scss';
+mat-sidenav-container {
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+}
+
+mat-sidenav {
+    background-color: $theme-bg;
+    min-width: 240px;
+}
+.mat-drawer-content {
+    max-height: 100vh;
+    overflow-y: hidden;
+}
+.mat-drawer-container {
+    background-color: $theme-bg;
+}
+
+.menu-button {
+    transition: 300ms ease-in-out;
+    transform: rotate(0deg);
+  }
+  .menu-button.rotated {
+    transform: rotate(180deg);
+  }
+  .submenu {
+    overflow-y: hidden;
+    transition: transform 300ms ease;
+    transform: scaleY(0);
+    transform-origin: top;
+    padding-left: 30px;
+  }
+  .submenu.expanded {
+    transform: scaleY(1);
+  }

@@ -1,0 +1,36 @@
+<div class="page-content" fxLayout="column" fxLayoutAlign="start center">
+  <div
+    class="heading-area"
+    fxFlex="25"
+    fxLayout="column"
+    fxLayoutAlign="center start"
+  >
+    <h3></h3>
+    <h1 class="main-heading">Farm supplies</h1>
+    <h4>
+        From livestock to tools, choose from our wide range of farm supplies... 
+    </h4>
+  </div>
+  <div
+    class="farm-tabs-area"
+    fxFlex="68"
+    fxLayout="column"
+    fxLayoutAlign="start start"
+  >
+    <nav mat-tab-nav-bar>
+      <a
+        mat-tab-link
+        *ngFor="let link of farmLinks"
+        (click)="activeLink = link.url"
+        [routerLink]="[base + link.url]"
+        [routerLinkActive]="['active']"
+        class="theme-button"
+      >
+        {{ link.name }}
+      </a>
+    </nav>
+    <div class="neu-box-in tab-content" fxFlex="90">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

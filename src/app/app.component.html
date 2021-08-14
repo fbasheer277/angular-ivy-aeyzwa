@@ -1,0 +1,19 @@
+<mat-sidenav-container [hasBackdrop]="false">
+  <mat-sidenav #sidenav [position]="'end'" [mode]="'over'">
+    <mat-nav-list>
+        <app-menu-nav-item *ngFor="let item of navItems"
+        [item]="item"></app-menu-nav-item>
+      <a mat-list-item (click)="sidenav.toggle()" mat-list-item><mat-icon>close</mat-icon>Close</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-menu-header (toggleSideNav)="sidenav.toggle()"></app-menu-header>
+    <div fxFill fxLayout="column" fxLayoutAlign="space-between stretch">
+      <content class="page-content">
+        <router-outlet></router-outlet>
+      </content>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+

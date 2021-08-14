@@ -1,0 +1,154 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '~@angular/material' as mat;
+
+@import "./app/variables.scss";
+
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$wipro-assignment-primary: mat.define-palette(mat.$gray-palette);
+$wipro-assignment-accent: mat.define-palette(
+  mat.$yellow-palette,
+  500,
+  700,
+  900
+);
+
+// The warn palette is optional (defaults to red).
+$wipro-assignment-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$wipro-assignment-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $wipro-assignment-primary,
+      accent: $wipro-assignment-accent,
+      warn: $wipro-assignment-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($wipro-assignment-theme);
+
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Tajawal";
+  src: url("assets/fonts/Tajawal-Regular.eot");
+  src: url("assets/fonts/Tajawal-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("assets/fonts/Tajawal-Regular.woff2") format("woff2"),
+    url("assets/fonts/Tajawal-Regular.woff") format("woff"),
+    url("assets/fonts/Tajawal-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: regular;
+  font-display: swap;
+}
+html,
+body {
+  height: 100%;
+  * {
+    font-family: "Tajawal" !important;
+    &.material-icons {
+      font-family: "Material Icons" !important;
+    }
+  }
+}
+body {
+  margin: 0;
+  background-color: $theme-bg;
+  color: $primary;
+}
+
+// page content
+.page-content {
+  height: 100%;
+  width: 100%;
+}
+
+.main-heading {
+  color: $accent;
+  font-size: 50px !important;
+  font-weight: 600 !important;
+}
+
+// BUTTON STYLES
+.theme-button {
+  @extend .neu-box-out;
+  font-family: "Tajawal" !important;
+  color: $primary !important;
+  opacity: 1 !important;
+  min-height: 40px;
+  min-width: 78px;
+  font-size: 14px;
+  padding: 6px 20px;
+  font-weight: 400;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  background-color: $theme-bg;
+  margin: 10px 13px 10px 13px !important;
+  transition: box-shadow 0.6s cubic-bezier(0.79, 0.21, 0.06, 0.81);
+  
+  &.active {
+    @extend .neu-box-in;
+    font-weight: bold;
+  }
+}
+
+
+// NEUMORPHISM STYLES
+.neu {
+  border-radius: 10px !important;
+}
+.neu-box-out {
+  @extend .neu;
+  box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001, inset 0px 0px 0px 0px #fff9,
+    inset 0px 0px 0px 0px #0001, inset 0px 0px 0px 0px #fff9,
+    inset 0px 0px 0px 0px #0001 !important;
+}
+.neu-box-in {
+  @extend .neu;
+  box-shadow: 0px 0px 0px 0px #fff9, 0px 0px 0px 0px #fff9,
+      0px 0px 0px 0px #0001, 0px 0px 0px 0px #0001,
+      inset -7px -7px 20px 0px #fff9, inset -4px -4px 5px 0px #fff9,
+      inset 7px 7px 20px 0px #0003, inset 4px 4px 5px 0px #0001 !important;
+}
+
+// GRID LAYOUT
+.grid-list {
+  padding: 15px 6%;
+  max-height: 100%;
+  overflow-y: auto;
+  .grid-card {
+    min-height: 220px;
+    margin: 20px;
+    // width: 200px;
+    .thumbnail {
+      width: 200px;
+      height: 200px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .label { 
+      font-size: 18px;
+    }
+    &:hover .label {
+      color: $accent;
+      font-weight: bold;
+    }
+  }
+}

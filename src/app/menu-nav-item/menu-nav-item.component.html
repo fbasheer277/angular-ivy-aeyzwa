@@ -1,0 +1,17 @@
+<div fxLayout="column" 
+fxLayoutAlign="center center"
+mat-list-item class="theme-button" disableRipple [routerLinkActive]="['active']">
+    <a fxLayout="row" fxLayoutAlign="center center" (click)="onItemSelected($event)" >
+        <span [routerLink]="[parent+item.url]">{{item.name}}</span>
+        <span fxFlex *ngIf="item.children && item.children.length>0" fxLayout="column" fxLayoutAlign="center center">
+        <mat-icon [@indicatorRotate]="expanded ? 'expanded': 'collapsed'">
+            expand_more
+        </mat-icon>
+        </span>
+    </a>
+    <div *ngIf="expanded" class="sub-items" [ngClass]="{'floating': floating}" (click)="expanded = !expanded">
+        <app-menu-nav-item *ngFor="let child of item.children" [parent]="item.url" [item]="child" [depth]="depth+1">
+        </app-menu-nav-item>
+      </div>
+</div>
+

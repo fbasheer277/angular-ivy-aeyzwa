@@ -1,0 +1,8 @@
+<div fxLayout="row wrap" fxLayoutWrap fxLayoutAlign="center start" fxLayoutGap="20px" class="grid-list">
+    <div class="grid-card" *ngFor="let tool of tools" fxLayout="column" fxLayoutAlign="center center">
+        <div [style.background-image]="doUrl(tool.image)" class="thumbnail"></div>
+        <div class="label">
+            {{tool.label}}
+        </div>
+    </div>
+</div>
