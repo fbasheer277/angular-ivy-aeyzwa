@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { mediaBase } from '../../contants';
 
 @Component({
   selector: 'app-snacks-tab',
@@ -9,35 +10,35 @@ import { FormBuilder } from '@angular/forms';
 export class SnacksTabComponent implements OnInit {
   snacks = [
     {
-      image: '../../../assets/images/snacks/banana.png',
+      image: mediaBase + 'snacks/banana.png',
       label: 'Banana'
     },
     {
-      image: '../../../assets/images/snacks/tea.png',
+      image: mediaBase + 'snacks/tea.png',
       label: 'Tea'
     },
     {
-      image: '../../../assets/images/snacks/milk.png',
+      image: mediaBase + 'snacks/milk.png',
       label: 'Milk'
     },
     {
-      image: '../../../assets/images/snacks/icecream.png',
+      image: mediaBase + 'snacks/icecream.png',
       label: 'Ice cream'
     },
     {
-      image: '../../../assets/images/snacks/cake.png',
+      image: mediaBase + 'snacks/cake.png',
       label: 'Huge Cake'
     },
     {
-      image: '../../../assets/images/snacks/pizza.png',
+      image: mediaBase + 'snacks/pizza.png',
       label: 'Pizza'
     },
     {
-      image: '../../../assets/images/snacks/mushroom.png',
+      image: mediaBase + 'snacks/mushroom.png',
       label: 'Magical mushrooms'
     },
     {
-      image: '../../../assets/images/snacks/canned-tuna.png',
+      image: mediaBase + 'snacks/canned-tuna.png',
       label: 'Tuna'
     }
   ]

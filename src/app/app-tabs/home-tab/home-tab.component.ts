@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { mediaBase } from '../../contants';
 
 @Component({
   selector: 'app-home-tab',
@@ -6,10 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-tab.component.scss']
 })
 export class HomeTabComponent implements OnInit {
+  mediaBase = mediaBase;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

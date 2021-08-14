@@ -10,12 +10,11 @@ export class FarmTabComponent implements OnInit {
   base = navItems[1].url;
   farmLinks = navItems[1].children;
   activeLink;
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
-     if (this.farmLinks) {
-      this.activeLink = this.farmLinks[0].url
-     }
+    if (this.farmLinks) {
+      this.activeLink = this.farmLinks[0].url;
+    }
   }
-
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { mediaBase } from '../../../contants';
 
 @Component({
   selector: 'app-tools-tab',
@@ -8,32 +9,30 @@ import { Component, OnInit } from '@angular/core';
 export class ToolsTabComponent implements OnInit {
   tools = [
     {
-      image: '../../../assets/images/tools/pen.png',
+      image: mediaBase + 'tools/pen.png',
       label: 'Chicken Pen'
     },
     {
-      image: '../../../assets/images/tools/ladder.png',
+      image: mediaBase + 'tools/ladder.png',
       label: 'Ladder'
     },
     {
-      image: '../../../assets/images/tools/bucket.png',
+      image: mediaBase + 'tools/bucket.png',
       label: 'Bucket'
     },
     {
-      image: '../../../assets/images/tools/door.png',
+      image: mediaBase + 'tools/door.png',
       label: 'Random Door'
     },
     {
-      image: '../../../assets/images/tools/tool.png',
+      image: mediaBase + 'tools/tool.png',
       label: 'Some tool'
     }
-  ]
-  constructor() { }
+  ];
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   doUrl(path): string {
     return `url(${path})`;
   }
-
 }
